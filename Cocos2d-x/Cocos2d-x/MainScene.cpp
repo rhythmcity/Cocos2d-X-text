@@ -20,6 +20,36 @@ bool MainScene::init(){
     if (!CCLayer::init()) {
         return false;
     }
+    
+    CCSprite *bg=CCSprite::create("map.png");
+   CCSize winsize= CCDirector::sharedDirector()->getWinSize();
+    bg->setPosition(ccp(winsize.width/2, winsize.height/2));
+    this->addChild(bg);
+    //帧创建
+//    CCSpriteFrame *frame=CCSpriteFrame::create("Peashooter1.tiff", CCRectMake(0, 0, 71, 71));
+//    CCSprite *plant=CCSprite::createWithSpriteFrame(frame);
+//    plant->setPosition(ccp(300, 300));
+//    this->addChild(plant);
+    //纹理创建
+//    CCImage *image = new CCImage();
+//    image->autorelease();
+//    image->initWithImageFile("Peashooter1.tiff");
+//    CCTexture2D *texture= new CCTexture2D();
+//    texture->initWithImage(image);
+//    CCSprite *plant=CCSprite::createWithTexture(texture);
+//    plant->setPosition(ccp(300, 300));
+//    this->addChild(plant);
+    //帧缓存创建
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Untitled_default.plist");
+    CCSpriteFrame *frame= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("本.png");
+    CCSprite *plant=CCSprite ::createWithSpriteFrame(frame);
+    plant->setPosition(ccp(300, 300));
+    this->addChild(plant);
+    CCSpriteFrame *frame1= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("妙.png");
+    CCSprite *plant1=CCSprite ::createWithSpriteFrame(frame1);
+    plant1->setPosition(ccp(350, 350));
+    this->addChild(plant1);
+    
 /*精灵*/
     
 //    sprite=CCSprite::create("Icon-72.png");
@@ -35,9 +65,9 @@ bool MainScene::init(){
 // //   schedule(schedule_selector(MainScene::update));//帧回调
 //    schedule(schedule_selector(MainScene::update), 1);//每秒回调一次
 /*菜单*/
-    CCMenuItemFont *item=CCMenuItemFont::create("开始游戏" , this,menu_selector(MainScene::onMenuItem));
-    CCMenu *menu = CCMenu::create(item,NULL);
-    this->addChild(menu);
+//    CCMenuItemFont *item=CCMenuItemFont::create("开始游戏" , this,menu_selector(MainScene::onMenuItem));
+//    CCMenu *menu = CCMenu::create(item,NULL);
+//    this->addChild(menu);
     
     
     return true;
@@ -45,7 +75,8 @@ bool MainScene::init(){
 void MainScene:: onMenuItem(CCObject *object){
     CCScene *scene=GameScene::scene();
    // GameScene *gamescene=GameScene::create();
-    CCDirector::sharedDirector()->replaceScene(scene);
+    CCTransitionPageTurn *transtscene=CCTransitionPageTurn::create(2, scene, false);
+    CCDirector::sharedDirector()->replaceScene(transtscene);
     
 
 }

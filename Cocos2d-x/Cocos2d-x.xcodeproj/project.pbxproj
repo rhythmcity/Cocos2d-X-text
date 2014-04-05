@@ -283,6 +283,10 @@
 		BA5827BC18F00ABE007CD67C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */; };
 		BA5827BF18F01294007CD67C /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827BD18F01294007CD67C /* MainScene.cpp */; };
 		BA6D5CC018F0208400556327 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA6D5CBE18F0208400556327 /* GameScene.cpp */; };
+		BA6D5CC218F0375400556327 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC118F0375400556327 /* map.png */; };
+		BA6D5CC418F037C000556327 /* Peashooter1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC318F037C000556327 /* Peashooter1.tiff */; };
+		BA6D5CC718F03C2C00556327 /* Untitled_default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC518F03C2C00556327 /* Untitled_default.png */; };
+		BA6D5CC818F03C2C00556327 /* Untitled_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC618F03C2C00556327 /* Untitled_default.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -881,6 +885,10 @@
 		BA5827BE18F01294007CD67C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		BA6D5CBE18F0208400556327 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		BA6D5CBF18F0208400556327 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BA6D5CC118F0375400556327 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		BA6D5CC318F037C000556327 /* Peashooter1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter1.tiff; sourceTree = "<group>"; };
+		BA6D5CC518F03C2C00556327 /* Untitled_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled_default.png; sourceTree = "<group>"; };
+		BA6D5CC618F03C2C00556327 /* Untitled_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Untitled_default.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -953,6 +961,10 @@
 		BA58241F18F00799007CD67C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA6D5CC518F03C2C00556327 /* Untitled_default.png */,
+				BA6D5CC618F03C2C00556327 /* Untitled_default.plist */,
+				BA6D5CC318F037C000556327 /* Peashooter1.tiff */,
+				BA6D5CC118F0375400556327 /* map.png */,
 				BA58242018F00799007CD67C /* CloseNormal.png */,
 				BA58242218F00799007CD67C /* CloseSelected.png */,
 				BA58242418F00799007CD67C /* Default.png */,
@@ -2166,6 +2178,7 @@
 			files = (
 				BA58243118F00799007CD67C /* Icon.png in Resources */,
 				BA5824D418F0079A007CD67C /* ChangeLog in Resources */,
+				BA6D5CC418F037C000556327 /* Peashooter1.tiff in Resources */,
 				BA58242118F00799007CD67C /* CloseNormal.png in Resources */,
 				BA58242D18F00799007CD67C /* Icon-Small.png in Resources */,
 				BA58242918F00799007CD67C /* Icon-72.png in Resources */,
@@ -2173,8 +2186,11 @@
 				BA58242718F00799007CD67C /* HelloWorld.png in Resources */,
 				BA58242B18F00799007CD67C /* Icon-Small-50.png in Resources */,
 				BA58243518F00799007CD67C /* iTunesArtwork in Resources */,
+				BA6D5CC218F0375400556327 /* map.png in Resources */,
 				BA58242F18F00799007CD67C /* Icon-Small@2x.png in Resources */,
 				BA58242518F00799007CD67C /* Default.png in Resources */,
+				BA6D5CC818F03C2C00556327 /* Untitled_default.plist in Resources */,
+				BA6D5CC718F03C2C00556327 /* Untitled_default.png in Resources */,
 				BA58242318F00799007CD67C /* CloseSelected.png in Resources */,
 				BA58243318F00799007CD67C /* Icon@2x.png in Resources */,
 				BA58264818F0079C007CD67C /* project.pbxproj in Resources */,
