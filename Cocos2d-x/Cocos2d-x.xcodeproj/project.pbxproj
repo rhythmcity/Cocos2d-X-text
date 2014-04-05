@@ -281,6 +281,8 @@
 		BA5827B218F0079E007CD67C /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827B118F0079E007CD67C /* AppDelegate.cpp */; };
 		BA5827B518F0079E007CD67C /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */; };
 		BA5827BC18F00ABE007CD67C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */; };
+		BA5827BF18F01294007CD67C /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827BD18F01294007CD67C /* MainScene.cpp */; };
+		BA6D5CC018F0208400556327 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA6D5CBE18F0208400556327 /* GameScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -875,6 +877,10 @@
 		BA5827B318F0079E007CD67C /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BA5827BD18F01294007CD67C /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
+		BA5827BE18F01294007CD67C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		BA6D5CBE18F0208400556327 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		BA6D5CBF18F0208400556327 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2100,6 +2106,10 @@
 				BA5827B118F0079E007CD67C /* AppDelegate.cpp */,
 				BA5827B318F0079E007CD67C /* HelloWorldScene.h */,
 				BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */,
+				BA5827BE18F01294007CD67C /* MainScene.h */,
+				BA5827BD18F01294007CD67C /* MainScene.cpp */,
+				BA6D5CBF18F0208400556327 /* GameScene.h */,
+				BA6D5CBE18F0208400556327 /* GameScene.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2249,6 +2259,7 @@
 				BA58278E18F0079E007CD67C /* cpCollision.c in Sources */,
 				BA5826F918F0079D007CD67C /* HttpClient.cpp in Sources */,
 				BA58271218F0079D007CD67C /* Atlas.cpp in Sources */,
+				BA5827BF18F01294007CD67C /* MainScene.cpp in Sources */,
 				BA58249418F0079A007CD67C /* CCGeometry.cpp in Sources */,
 				BA58244D18F00799007CD67C /* CCActionEase.cpp in Sources */,
 				BA58278418F0079E007CD67C /* cpArbiter.c in Sources */,
@@ -2257,6 +2268,7 @@
 				BA5826FE18F0079D007CD67C /* WebSocket.cpp in Sources */,
 				BA58248518F0079A007CD67C /* CCArray.cpp in Sources */,
 				BA58260818F0079C007CD67C /* CCTextureAtlas.cpp in Sources */,
+				BA6D5CC018F0208400556327 /* GameScene.cpp in Sources */,
 				BA58250218F0079A007CD67C /* CCLayer.cpp in Sources */,
 				BA58277618F0079E007CD67C /* cpGrooveJoint.c in Sources */,
 				BA58270C18F0079D007CD67C /* AnimationState.cpp in Sources */,
@@ -2568,6 +2580,7 @@
 				BA5827BA18F0079E007CD67C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
