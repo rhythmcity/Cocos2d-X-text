@@ -116,7 +116,7 @@
 		BA58256518F0079B007CD67C /* CCLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA58256418F0079B007CD67C /* CCLock.cpp */; };
 		BA58256A18F0079B007CD67C /* CCThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA58256918F0079B007CD67C /* CCThread.mm */; };
 		BA58256D18F0079B007CD67C /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA58256C18F0079B007CD67C /* EAGLView.mm */; };
-		BA58257218F0079B007CD67C /* AccelerometerSimulation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58257118F0079B007CD67C /* AccelerometerSimulation.m */; };
+		BA58257218F0079B007CD67C /* AccelerometerSimulation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58257118F0079B007CD67C /* AccelerometerSimulation.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		BA58257418F0079B007CD67C /* platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA58257318F0079B007CD67C /* platform.cpp */; };
 		BA58258418F0079B007CD67C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA58258318F0079B007CD67C /* libcurl.a */; };
 		BA58258618F0079B007CD67C /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA58258518F0079B007CD67C /* libwebp.a */; };
@@ -280,6 +280,7 @@
 		BA5827AC18F0079E007CD67C /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5827AB18F0079E007CD67C /* libwebsockets.a */; };
 		BA5827B218F0079E007CD67C /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827B118F0079E007CD67C /* AppDelegate.cpp */; };
 		BA5827B518F0079E007CD67C /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */; };
+		BA5827BC18F00ABE007CD67C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -873,6 +874,7 @@
 		BA5827B118F0079E007CD67C /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		BA5827B318F0079E007CD67C /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -900,6 +902,7 @@
 		BA58240218F00799007CD67C = {
 			isa = PBXGroup;
 			children = (
+				BA5827BB18F00ABE007CD67C /* Default-568h@2x.png */,
 				BA58241E18F00799007CD67C /* Cocos2d-x */,
 				BA58240D18F00799007CD67C /* Frameworks */,
 				BA58240C18F00799007CD67C /* Products */,
@@ -2156,6 +2159,7 @@
 				BA58242118F00799007CD67C /* CloseNormal.png in Resources */,
 				BA58242D18F00799007CD67C /* Icon-Small.png in Resources */,
 				BA58242918F00799007CD67C /* Icon-72.png in Resources */,
+				BA5827BC18F00ABE007CD67C /* Default-568h@2x.png in Resources */,
 				BA58242718F00799007CD67C /* HelloWorld.png in Resources */,
 				BA58242B18F00799007CD67C /* Icon-Small-50.png in Resources */,
 				BA58243518F00799007CD67C /* iTunesArtwork in Resources */,
@@ -2455,7 +2459,7 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2484,7 +2488,7 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2501,6 +2505,7 @@
 				GCC_PREFIX_HEADER = "Cocos2d-x/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "Cocos2d-x/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Cocos2d-x/libs/cocos2dx/platform/third_party/ios/libraries",
@@ -2510,7 +2515,6 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
-					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"Cocos2d-x/libs/Chipmunk/include/chipmunk\"";
@@ -2527,6 +2531,7 @@
 				GCC_PREFIX_HEADER = "Cocos2d-x/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "Cocos2d-x/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Cocos2d-x/libs/cocos2dx/platform/third_party/ios/libraries",
@@ -2536,7 +2541,6 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
-					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"Cocos2d-x/libs/Chipmunk/include/chipmunk\"";
