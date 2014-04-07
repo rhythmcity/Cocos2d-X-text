@@ -36,15 +36,14 @@ bool MainScene::init(){
     return true;
 }
 void MainScene:: onMenuItem(CCObject *object){
+    CCMoveTo *to=CCMoveTo::create(3, ccp(900, 300));
     
-    ccBezierConfig  bc;
-    bc.controlPoint_1=ccp(400, 400);
-    bc.controlPoint_2=ccp(800, 200);
-    bc.endPosition=ccp(900, 300);
-    CCBezierTo *to=CCBezierTo ::create(3, bc);//贝塞尔曲线
+    CCEaseSineIn *in=CCEaseSineIn::create(to);
+    CCDelayTime *delay=CCDelayTime::create(2);
+    CCBlink *blink=CCBlink::create(3, 10);
     
-    
-    sprite->runAction(to);
+    CCSequence *se=CCSequence::create(in,delay,blink,NULL);
+    sprite->runAction(se);
     
 
 }
