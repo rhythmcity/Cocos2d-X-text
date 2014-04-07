@@ -42,8 +42,9 @@ void MainScene:: onMenuItem(CCObject *object){
     CCDelayTime *delay=CCDelayTime::create(2);
     CCBlink *blink=CCBlink::create(3, 10);
     
-    CCSequence *se=CCSequence::create(in,delay,blink,NULL);
-    sprite->runAction(se);
+   // CCSequence *se=CCSequence::create(in,delay,blink,NULL);
+    CCSpawn *sp=CCSpawn ::create(in,blink,NULL);
+    sprite->runAction(sp);
     
 
 }
