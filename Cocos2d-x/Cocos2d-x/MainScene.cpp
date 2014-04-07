@@ -26,11 +26,45 @@ bool MainScene::init(){
     CCMenu *menu=CCMenu::create(item,NULL);
     menu->setPosition(ccp(200, 300));
     this->addChild(menu);
-    sprite=CCSprite::create("Icon-72.png");
+    sprite=CCSprite::create("map.png");
    CCSize winsize= CCDirector::sharedDirector()->getWinSize();
-    sprite->setPosition(ccp(300, 300));
+    sprite->setPosition(ccp(winsize.width/2, winsize.height/2));
     this->addChild(sprite);
-    
+    CCSpriteFrame *frame0=CCSpriteFrame::create("Peashooter1.tiff", CCRect(71*0, 0, 250, 300));
+        CCSpriteFrame *frame1=CCSpriteFrame::create("Peashooter2.tiff", CCRect(71*1, 0, 250, 300));
+        CCSpriteFrame *frame2=CCSpriteFrame::create("Peashooter3.tiff", CCRect(71*2, 0, 250, 300));
+        CCSpriteFrame *frame3=CCSpriteFrame::create("Peashooter4.tiff", CCRect(71*3, 0, 250, 300));
+        CCSpriteFrame *frame4=CCSpriteFrame::create("Peashooter5.tiff", CCRect(71*4, 0, 250, 300));
+        CCSpriteFrame *frame5=CCSpriteFrame::create("Peashooter6.tiff", CCRect(71*5, 0, 250, 300));
+        CCSpriteFrame *frame6=CCSpriteFrame::create("Peashooter7.tiff", CCRect(71*6, 0, 250, 300));
+        CCSpriteFrame *frame7=CCSpriteFrame::create("Peashooter8.tiff", CCRect(71*7, 0, 250, 300));
+        CCSpriteFrame *frame8=CCSpriteFrame::create("Peashooter9.tiff", CCRect(71*8, 0, 250, 300));
+        CCSpriteFrame *frame9=CCSpriteFrame::create("Peashooter10.tiff", CCRect(71*9, 0, 250, 300));
+        CCSpriteFrame *frame10=CCSpriteFrame::create("Peashooter11.tiff", CCRect(71*10, 0, 250, 300));
+        CCSpriteFrame *frame11=CCSpriteFrame::create("Peashooter12.tiff", CCRect(71*11, 0, 250, 300));
+        CCSpriteFrame *frame12=CCSpriteFrame::create("Peashooter13.tiff", CCRect(71*12, 0, 250, 300));
+    CCSprite *plant=CCSprite::createWithSpriteFrame(frame0);
+    plant->setPosition(ccp(250, 300));
+    this->addChild(plant);
+//    CCArray *array=CCArray::create();
+//    array->addObject(frame0);
+//     array->addObject(frame1);
+//     array->addObject(frame2);
+//     array->addObject(frame3);
+//     array->addObject(frame4);
+//     array->addObject(frame5);
+//     array->addObject(frame6);
+//     array->addObject(frame7);
+//     array->addObject(frame8);
+//     array->addObject(frame9);
+//     array->addObject(frame10);
+//     array->addObject(frame11);
+//     array->addObject(frame12);
+//    CCAnimation *antion=CCAnimation::createWithSpriteFrames(array,0.2f);
+//  //  CCAnimate *animate=CCAnimate ::initWithAnimation(antion);
+//   // CCSequence *seq=CCSequence::create(ani);
+//    plant->runAction(animate);
+
 
     
     return true;
