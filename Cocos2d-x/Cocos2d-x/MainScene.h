@@ -21,6 +21,7 @@ public:
 private:
    // void update(float t);
     void onMenuItem(CCObject *object);
+    void finshAction();
 
 };
 

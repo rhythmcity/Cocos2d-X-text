@@ -42,10 +42,16 @@ void MainScene:: onMenuItem(CCObject *object){
     CCDelayTime *delay=CCDelayTime::create(2);
     CCBlink *blink=CCBlink::create(3, 10);
     
-   // CCSequence *se=CCSequence::create(in,delay,blink,NULL);
+   //
     CCSpawn *sp=CCSpawn ::create(in,blink,NULL);
-    sprite->runAction(sp);
-    
+    CCCallFunc *call=CCCallFunc::create(this, callfunc_selector(MainScene::finshAction));
+    CCSequence *se=CCSequence::create(sp,call,NULL);
+    sprite->runAction(se);
+
+
+}
+void MainScene:: finshAction(){
+    CCLog("得瑟完了");
 
 }
 //void MainScene:: update(float t){
