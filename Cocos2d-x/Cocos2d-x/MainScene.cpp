@@ -20,76 +20,42 @@ bool MainScene::init(){
     if (!CCLayer::init()) {
         return false;
     }
+   
     
-    CCSprite *bg=CCSprite::create("map.png");
+    CCMenuItemFont *item=CCMenuItemFont ::create("onaction", this, menu_selector(MainScene::onMenuItem));
+    CCMenu *menu=CCMenu::create(item,NULL);
+    menu->setPosition(ccp(200, 300));
+    this->addChild(menu);
+    sprite=CCSprite::create("Icon-72.png");
    CCSize winsize= CCDirector::sharedDirector()->getWinSize();
-    bg->setPosition(ccp(winsize.width/2, winsize.height/2));
-    this->addChild(bg);
-    //帧创建
-//    CCSpriteFrame *frame=CCSpriteFrame::create("Peashooter1.tiff", CCRectMake(0, 0, 71, 71));
-//    CCSprite *plant=CCSprite::createWithSpriteFrame(frame);
-//    plant->setPosition(ccp(300, 300));
-//    this->addChild(plant);
-    //纹理创建
-//    CCImage *image = new CCImage();
-//    image->autorelease();
-//    image->initWithImageFile("Peashooter1.tiff");
-//    CCTexture2D *texture= new CCTexture2D();
-//    texture->initWithImage(image);
-//    CCSprite *plant=CCSprite::createWithTexture(texture);
-//    plant->setPosition(ccp(300, 300));
-//    this->addChild(plant);
-    // 渲染一次,提升效率  batchnode   CClayer 可以加载多个batchnode
-    CCSpriteBatchNode *node=CCSpriteBatchNode::create("Untitled_default.png");
-    this->addChild(node);
-    //帧缓存创建
-    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Untitled_default.plist");
-    CCSpriteFrame *frame= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("本.png");
-    CCSprite *plant=CCSprite ::createWithSpriteFrame(frame);
-    plant->setPosition(ccp(300, 300));
-   // this->addChild(plant);
-    CCSpriteFrame *frame1= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("妙.png");
-    CCSprite *plant1=CCSprite ::createWithSpriteFrame(frame1);
-    plant1->setPosition(ccp(350, 350));
- //   this->addChild(plant1);
+    sprite->setPosition(ccp(winsize.width/2, winsize.height/2));
+    this->addChild(sprite);
     
-  
-    CCSprite *sp=CCSprite ::create("Peashooter1.tiff");
-    sp->setPosition(ccp(300, 300));
-    node->addChild(plant);
-    CCSprite *sp1  =CCSprite ::create("Peashooter1.tiff");
-    sp1->setPosition(ccp(400, 300));
-    node->addChild(plant1);
-    
-    
-    
-/*精灵*/
-    
-//    sprite=CCSprite::create("Icon-72.png");
-//    
-//    sprite->setPosition(CCPointMake(480, 320));
-//   // sprite->setAnchorPoint(CCPointMake(1, 1));//锚点 默认是0.5 0.5
-//    sprite->setRotation(90);// 旋转
-//   // sprite->setScale(2.0);//缩放
-//    
-//    this->addChild(sprite);
-//    
-//    
-// //   schedule(schedule_selector(MainScene::update));//帧回调
-//    schedule(schedule_selector(MainScene::update), 1);//每秒回调一次
-/*菜单*/
-//    CCMenuItemFont *item=CCMenuItemFont::create("开始游戏" , this,menu_selector(MainScene::onMenuItem));
-//    CCMenu *menu = CCMenu::create(item,NULL);
-//    this->addChild(menu);
-    
+
     
     return true;
 }
 void MainScene:: onMenuItem(CCObject *object){
-    CCScene *scene=GameScene::scene();
-   // GameScene *gamescene=GameScene::create();
-    CCTransitionPageTurn *transtscene=CCTransitionPageTurn::create(2, scene, false);
-    CCDirector::sharedDirector()->replaceScene(transtscene);
+     /*动画*/
+//    CCHide *hide= CCHide::create();
+//    CCFadeTo *to=CCFadeTo::create(2, 100);//  0~255
+//    CCFadeOut *out=CCFadeOut ::create(3);
+//    CCMoveTo *moveto=CCMoveTo::create(3, ccp(800, sprite->getPositionY()));//移动到什么位置 X ， Y
+//    CCMoveBy *moveby=CCMoveBy::create(3, ccp(300, 0));//移动多少位置 X，Y
+  //  CCJumpTo *junmto=CCJumpTo::create(2, ccp(sprite->getPositionX()+300, sprite->getPositionY()), 100, 1);//跳到哪
+//    CCJumpBy *junmby=CCJumpBy::create(2, ccp(300, 0), 100, 1);//跳多少
+    CCPointArray *pointArr=CCPointArray::create(5);
+    pointArr->addControlPoint(ccp(0,0));
+    pointArr->addControlPoint(ccp(100, 0));
+    pointArr->addControlPoint(ccp(100, -50));
+    pointArr->addControlPoint(ccp(150, -50));
+    pointArr->addControlPoint(ccp(150, 0));
+    pointArr->addControlPoint(ccp(250, 0));
+    
+    CCCardinalSplineBy *by=CCCardinalSplineBy ::create(3, pointArr, 1);//按轨迹移动  tension 张力   1 为 直线运动
+    
+    
+    sprite->runAction(by);
     
 
 }
