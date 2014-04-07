@@ -39,16 +39,29 @@ bool MainScene::init(){
 //    CCSprite *plant=CCSprite::createWithTexture(texture);
 //    plant->setPosition(ccp(300, 300));
 //    this->addChild(plant);
+    // 渲染一次,提升效率  batchnode   CClayer 可以加载多个batchnode
+    CCSpriteBatchNode *node=CCSpriteBatchNode::create("Untitled_default.png");
+    this->addChild(node);
     //帧缓存创建
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Untitled_default.plist");
     CCSpriteFrame *frame= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("本.png");
     CCSprite *plant=CCSprite ::createWithSpriteFrame(frame);
     plant->setPosition(ccp(300, 300));
-    this->addChild(plant);
+   // this->addChild(plant);
     CCSpriteFrame *frame1= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("妙.png");
     CCSprite *plant1=CCSprite ::createWithSpriteFrame(frame1);
     plant1->setPosition(ccp(350, 350));
-    this->addChild(plant1);
+ //   this->addChild(plant1);
+    
+  
+    CCSprite *sp=CCSprite ::create("Peashooter1.tiff");
+    sp->setPosition(ccp(300, 300));
+    node->addChild(plant);
+    CCSprite *sp1  =CCSprite ::create("Peashooter1.tiff");
+    sp1->setPosition(ccp(400, 300));
+    node->addChild(plant1);
+    
+    
     
 /*精灵*/
     
