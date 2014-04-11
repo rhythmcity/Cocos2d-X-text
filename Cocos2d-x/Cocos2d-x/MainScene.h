@@ -15,6 +15,7 @@ class MainScene:public CCLayer{
 
 public:
     CCSprite *sprite;
+    CCSprite *Zombie;
     virtual bool init();
     static CCScene *scene();
     CREATE_FUNC(MainScene);
@@ -22,6 +23,7 @@ private:
    // void update(float t);
     void onMenuItem(CCObject *object);
     void finshAction();
+    void update(float t);
 
 };
 

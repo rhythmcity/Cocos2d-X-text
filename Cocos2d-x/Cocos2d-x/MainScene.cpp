@@ -22,48 +22,52 @@ bool MainScene::init(){
     }
    
     
-    CCMenuItemFont *item=CCMenuItemFont ::create("onaction", this, menu_selector(MainScene::onMenuItem));
-    CCMenu *menu=CCMenu::create(item,NULL);
-    menu->setPosition(ccp(200, 300));
-    this->addChild(menu);
+//    CCMenuItemFont *item=CCMenuItemFont ::create("onaction", this, menu_selector(MainScene::onMenuItem));
+//    CCMenu *menu=CCMenu::create(item,NULL);
+//    menu->setPosition(ccp(200, 300));
+//    this->addChild(menu);
     sprite=CCSprite::create("map.png");
+  
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("PlantAndZombie.plist");
+    
    CCSize winsize= CCDirector::sharedDirector()->getWinSize();
     sprite->setPosition(ccp(winsize.width/2, winsize.height/2));
     this->addChild(sprite);
-    CCSpriteFrame *frame0=CCSpriteFrame::create("Peashooter1.tiff", CCRect(71*0, 0, 250, 300));
-        CCSpriteFrame *frame1=CCSpriteFrame::create("Peashooter2.tiff", CCRect(71*1, 0, 250, 300));
-        CCSpriteFrame *frame2=CCSpriteFrame::create("Peashooter3.tiff", CCRect(71*2, 0, 250, 300));
-        CCSpriteFrame *frame3=CCSpriteFrame::create("Peashooter4.tiff", CCRect(71*3, 0, 250, 300));
-        CCSpriteFrame *frame4=CCSpriteFrame::create("Peashooter5.tiff", CCRect(71*4, 0, 250, 300));
-        CCSpriteFrame *frame5=CCSpriteFrame::create("Peashooter6.tiff", CCRect(71*5, 0, 250, 300));
-        CCSpriteFrame *frame6=CCSpriteFrame::create("Peashooter7.tiff", CCRect(71*6, 0, 250, 300));
-        CCSpriteFrame *frame7=CCSpriteFrame::create("Peashooter8.tiff", CCRect(71*7, 0, 250, 300));
-        CCSpriteFrame *frame8=CCSpriteFrame::create("Peashooter9.tiff", CCRect(71*8, 0, 250, 300));
-        CCSpriteFrame *frame9=CCSpriteFrame::create("Peashooter10.tiff", CCRect(71*9, 0, 250, 300));
-        CCSpriteFrame *frame10=CCSpriteFrame::create("Peashooter11.tiff", CCRect(71*10, 0, 250, 300));
-        CCSpriteFrame *frame11=CCSpriteFrame::create("Peashooter12.tiff", CCRect(71*11, 0, 250, 300));
-        CCSpriteFrame *frame12=CCSpriteFrame::create("Peashooter13.tiff", CCRect(71*12, 0, 250, 300));
-    CCSprite *plant=CCSprite::createWithSpriteFrame(frame0);
-    plant->setPosition(ccp(250, 300));
-    this->addChild(plant);
-//    CCArray *array=CCArray::create();
-//    array->addObject(frame0);
-//     array->addObject(frame1);
-//     array->addObject(frame2);
-//     array->addObject(frame3);
-//     array->addObject(frame4);
-//     array->addObject(frame5);
-//     array->addObject(frame6);
-//     array->addObject(frame7);
-//     array->addObject(frame8);
-//     array->addObject(frame9);
-//     array->addObject(frame10);
-//     array->addObject(frame11);
-//     array->addObject(frame12);
-//    CCAnimation *antion=CCAnimation::createWithSpriteFrames(array,0.2f);
-//  //  CCAnimate *animate=CCAnimate ::initWithAnimation(antion);
-//   // CCSequence *seq=CCSequence::create(ani);
-//    plant->runAction(animate);
+    CCSpriteBatchNode *bach=CCSpriteBatchNode::create("PlantAndZombie.png");
+    this->addChild(bach);
+    CCSpriteFrame *frame;
+    CCArray *array=CCArray::create();
+    for (int i =0; i<12; i++) {
+        char* str=new char[255];
+        sprintf(str, "Peashooter%d.tiff",i+1);
+        frame= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(str);
+        array->addObject(frame);
+    }
+    CCSprite *plant=CCSprite ::createWithSpriteFrame(frame);
+    plant->setPosition(ccp(300, 300));
+    bach->addChild(plant);
+    CCAnimation *antion=CCAnimation::createWithSpriteFrames(array,0.1f);
+    CCAnimate *animate=CCAnimate::create(antion);
+    CCRepeatForever *repeat=CCRepeatForever::create(animate);
+    plant->runAction(repeat);
+    
+    CCSpriteFrame *frame1;
+    CCArray *array1=CCArray::create();
+    for (int i =0; i<21; i++) {
+        char* str=new char[255];
+        sprintf(str, "Zombie%d.tiff",i+1);
+        frame1= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(str);
+        array1->addObject(frame1);
+    }
+    Zombie=CCSprite ::createWithSpriteFrame(frame1);
+    Zombie->setPosition(ccp(800, 300));
+    bach->addChild(Zombie);
+    CCAnimation *antion1=CCAnimation::createWithSpriteFrames(array1,0.2f);
+    CCAnimate *animate1=CCAnimate::create(antion1);
+    CCRepeatForever *repeat1=CCRepeatForever::create(animate1);
+     schedule(schedule_selector(MainScene::update),0.5);//每秒回调一次
+    Zombie->runAction(repeat1);
+
 
 
     
@@ -85,12 +89,12 @@ void MainScene:: onMenuItem(CCObject *object){
 
 }
 void MainScene:: finshAction(){
-    CCLog("得瑟完了");
-
+   
+    Zombie->setPosition(ccp(Zombie->getPosition().x-1, 300));
 }
-//void MainScene:: update(float t){
-//
-//    sprite->setPosition(ccpAdd(sprite->getPosition(), ccp(1, 0)));//每一帧坐标X轴+1
+void MainScene:: update(float t){
+
+    Zombie->setPosition(ccpAdd(Zombie->getPosition(), ccp(-1, 0)));//每一帧坐标X轴+1
 //    sprite->setRotation(sprite->getRotation()+1);
-//}
+}
 
