@@ -16,6 +16,12 @@ class MainScene:public CCLayer{
 public:
     CCSprite *sprite;
     CCSprite *Zombie;
+    CCSprite *PB;
+    CCSprite *plant;
+    CCRepeatForever *repeat1;
+    
+    bool islive;
+    int beats;
     virtual bool init();
     static CCScene *scene();
     CREATE_FUNC(MainScene);
@@ -24,7 +30,10 @@ private:
     void onMenuItem(CCObject *object);
     void finshAction();
     void update(float t);
-
+    void repeat(float t);
+    void  newzombie();
+    void zombiemove(float t);
+ 
 };
 
 

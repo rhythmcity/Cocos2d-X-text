@@ -43,7 +43,7 @@ bool MainScene::init(){
         frame= CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(str);
         array->addObject(frame);
     }
-    CCSprite *plant=CCSprite ::createWithSpriteFrame(frame);
+    plant=CCSprite ::createWithSpriteFrame(frame);
     plant->setPosition(ccp(300, 300));
     bach->addChild(plant);
     CCAnimation *antion=CCAnimation::createWithSpriteFrames(array,0.1f);
@@ -64,9 +64,24 @@ bool MainScene::init(){
     bach->addChild(Zombie);
     CCAnimation *antion1=CCAnimation::createWithSpriteFrames(array1,0.2f);
     CCAnimate *animate1=CCAnimate::create(antion1);
-    CCRepeatForever *repeat1=CCRepeatForever::create(animate1);
-     schedule(schedule_selector(MainScene::update),0.5);//每秒回调一次
+    repeat1=CCRepeatForever::create(animate1);
+    schedule(schedule_selector(MainScene::update));//每秒回调一次
+    schedule(schedule_selector(MainScene::zombiemove));//每秒回调一次
+    schedule(schedule_selector(MainScene::repeat),5);//每秒回调一次
+
     Zombie->runAction(repeat1);
+    
+    PB=CCSprite::create("PB01.png");
+    PB->setPosition(ccp(plant->getPosition().x+20, plant->getPosition().y+10));
+    
+//    CCMoveBy *move=CCMoveBy::create(4, ccp(1136, 0));
+//    
+//    CCFadeOut *fadeout=CCFadeOut::create(0.2);
+//    CCSequence *sq=CCSequence::create(move,fadeout,NULL);
+//    PB->runAction();
+    this->addChild(PB);
+    PB->setVisible(false);
+    
 
 
 
@@ -85,16 +100,62 @@ void MainScene:: onMenuItem(CCObject *object){
     CCCallFunc *call=CCCallFunc::create(this, callfunc_selector(MainScene::finshAction));
     CCSequence *se=CCSequence::create(sp,call,NULL);
     sprite->runAction(se);
-
+    
 
 }
 void MainScene:: finshAction(){
    
     Zombie->setPosition(ccp(Zombie->getPosition().x-1, 300));
 }
-void MainScene:: update(float t){
+void MainScene:: zombiemove(float t){
+    Zombie->setPosition(ccpAdd(Zombie->getPosition(), ccp(-0.4, 0)));//每一帧坐标X轴+1
 
-    Zombie->setPosition(ccpAdd(Zombie->getPosition(), ccp(-1, 0)));//每一帧坐标X轴+1
+
+}
+void MainScene:: update(float t){
+islive=true;
+   // Zombie->setPosition(ccpAdd(Zombie->getPosition(), ccp(-0.2, 0)));//每一帧坐标X轴+1
+    
+  
+    if (PB->isVisible()&&PB->boundingBox().intersectsRect(Zombie->boundingBox())) {
+        PB->stopAllActions();
+       // PB->removeFromParent();
+        PB->setVisible(false);
+        
+        
+        CCFadeOut *fadeout=CCFadeOut::create(0.5);
+        
+        CCCallFunc *call=CCCallFunc::create(this, callfunc_selector(MainScene::newzombie));
+        CCSequence *se=CCSequence::create(fadeout,call,NULL);
+        Zombie->runAction(se);
+//            Zombie->stopAllActions();
+        
+        
+        
+        
+      
+        
+        
+    }
 //    sprite->setRotation(sprite->getRotation()+1);
 }
 
+void MainScene:: newzombie(){
+   
+    Zombie->setPosition(ccp(800, 300));
+    CCFadeIn *fadein=CCFadeIn::create(0.5);
+
+     Zombie->runAction(fadein);
+    islive=true;
+}
+void MainScene:: repeat(float t){
+    PB->setVisible(true);
+    PB->setPosition(ccp(plant->getPosition().x+20, plant->getPosition().y+10));
+    
+    
+    CCMoveTo *move=CCMoveTo::create(2, Zombie->getPosition());
+    PB->runAction(move);
+   
+   // this->addChild(PB);
+
+}
