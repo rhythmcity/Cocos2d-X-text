@@ -10,30 +10,25 @@
 #define __Cocos2d_x__MainScene__
 #include <iostream>
 #include "cocos2d.h"
+#include "Plant.h"
 using namespace cocos2d;
 class MainScene:public CCLayer{
 
 public:
-    CCSprite *sprite;
-    CCSprite *Zombie;
-    CCSprite *PB;
-    CCSprite *plant;
-    CCRepeatForever *repeat1;
+    void loadSprite();
+//    CCSprite *plant;
+    CCTMXTiledMap *map;
     
-    bool islive;
-    int beats;
     virtual bool init();
     static CCScene *scene();
     CREATE_FUNC(MainScene);
 private:
-   // void update(float t);
-    void onMenuItem(CCObject *object);
-    void finshAction();
-    void update(float t);
-    void repeat(float t);
-    void  newzombie();
-    void zombiemove(float t);
- 
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent); 
+
+//    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+
 };
 
 

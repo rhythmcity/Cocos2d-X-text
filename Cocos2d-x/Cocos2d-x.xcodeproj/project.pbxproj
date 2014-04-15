@@ -294,6 +294,8 @@
 		BA6D5CC418F037C000556327 /* Peashooter1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC318F037C000556327 /* Peashooter1.tiff */; };
 		BA6D5CC718F03C2C00556327 /* Untitled_default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC518F03C2C00556327 /* Untitled_default.png */; };
 		BA6D5CC818F03C2C00556327 /* Untitled_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6D5CC618F03C2C00556327 /* Untitled_default.plist */; };
+		BA8F540718FCFE2600918396 /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BA8F540618FCFE2600918396 /* map.tmx */; };
+		BA8F540A18FD0C4C00918396 /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8F540818FD0C4C00918396 /* Plant.cpp */; };
 		BAAB2C6F18F2BAF100EFE4C4 /* Peashooter2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6318F2BAF000EFE4C4 /* Peashooter2.tiff */; };
 		BAAB2C7018F2BAF100EFE4C4 /* Peashooter3.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6418F2BAF100EFE4C4 /* Peashooter3.tiff */; };
 		BAAB2C7118F2BAF100EFE4C4 /* Peashooter4.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6518F2BAF100EFE4C4 /* Peashooter4.tiff */; };
@@ -915,6 +917,9 @@
 		BA6D5CC318F037C000556327 /* Peashooter1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter1.tiff; sourceTree = "<group>"; };
 		BA6D5CC518F03C2C00556327 /* Untitled_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled_default.png; sourceTree = "<group>"; };
 		BA6D5CC618F03C2C00556327 /* Untitled_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Untitled_default.plist; sourceTree = "<group>"; };
+		BA8F540618FCFE2600918396 /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
+		BA8F540818FD0C4C00918396 /* Plant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plant.cpp; sourceTree = "<group>"; };
+		BA8F540918FD0C4C00918396 /* Plant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
 		BAAB2C6318F2BAF000EFE4C4 /* Peashooter2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter2.tiff; sourceTree = "<group>"; };
 		BAAB2C6418F2BAF100EFE4C4 /* Peashooter3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter3.tiff; sourceTree = "<group>"; };
 		BAAB2C6518F2BAF100EFE4C4 /* Peashooter4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter4.tiff; sourceTree = "<group>"; };
@@ -999,6 +1004,7 @@
 		BA58241F18F00799007CD67C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F540618FCFE2600918396 /* map.tmx */,
 				BA4E351718F9839600140BE4 /* PB01.png */,
 				BA1C453118F79C030083B9B6 /* PlantAndZombie.plist */,
 				BA1C453218F79C030083B9B6 /* PlantAndZombie.png */,
@@ -2177,6 +2183,8 @@
 				BA5827B418F0079E007CD67C /* HelloWorldScene.cpp */,
 				BA5827BE18F01294007CD67C /* MainScene.h */,
 				BA5827BD18F01294007CD67C /* MainScene.cpp */,
+				BA8F540918FD0C4C00918396 /* Plant.h */,
+				BA8F540818FD0C4C00918396 /* Plant.cpp */,
 				BA6D5CBF18F0208400556327 /* GameScene.h */,
 				BA6D5CBE18F0208400556327 /* GameScene.cpp */,
 			);
@@ -2267,6 +2275,7 @@
 				BAAB2C7918F2BAF100EFE4C4 /* Peashooter12.tiff in Resources */,
 				BA6D5CC718F03C2C00556327 /* Untitled_default.png in Resources */,
 				BAAB2C7818F2BAF100EFE4C4 /* Peashooter11.tiff in Resources */,
+				BA8F540718FCFE2600918396 /* map.tmx in Resources */,
 				BA58242318F00799007CD67C /* CloseSelected.png in Resources */,
 				BA58243318F00799007CD67C /* Icon@2x.png in Resources */,
 				BA58264818F0079C007CD67C /* project.pbxproj in Resources */,
@@ -2373,6 +2382,7 @@
 				BA58247518F0079A007CD67C /* CCConfiguration.cpp in Sources */,
 				BA58245F18F0079A007CD67C /* CCActionPageTurn3D.cpp in Sources */,
 				BA5827A018F0079E007CD67C /* cpSpatialIndex.c in Sources */,
+				BA8F540A18FD0C4C00918396 /* Plant.cpp in Sources */,
 				BA58271E18F0079D007CD67C /* Bone.cpp in Sources */,
 				BA5824F418F0079A007CD67C /* CCKeypadDispatcher.cpp in Sources */,
 				BA5825F018F0079C007CD67C /* CCUserDefault.mm in Sources */,
