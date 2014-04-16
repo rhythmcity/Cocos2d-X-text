@@ -308,6 +308,7 @@
 		BAAB2C7818F2BAF100EFE4C4 /* Peashooter11.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6C18F2BAF100EFE4C4 /* Peashooter11.tiff */; };
 		BAAB2C7918F2BAF100EFE4C4 /* Peashooter12.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6D18F2BAF100EFE4C4 /* Peashooter12.tiff */; };
 		BAAB2C7A18F2BAF100EFE4C4 /* Peashooter13.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BAAB2C6E18F2BAF100EFE4C4 /* Peashooter13.tiff */; };
+		BAF87E3F18FE4F9600A8C0B0 /* Zombie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAF87E3D18FE4F9600A8C0B0 /* Zombie.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -932,6 +933,8 @@
 		BAAB2C6C18F2BAF100EFE4C4 /* Peashooter11.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter11.tiff; sourceTree = "<group>"; };
 		BAAB2C6D18F2BAF100EFE4C4 /* Peashooter12.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter12.tiff; sourceTree = "<group>"; };
 		BAAB2C6E18F2BAF100EFE4C4 /* Peashooter13.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Peashooter13.tiff; sourceTree = "<group>"; };
+		BAF87E3D18FE4F9600A8C0B0 /* Zombie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Zombie.cpp; sourceTree = "<group>"; };
+		BAF87E3E18FE4F9600A8C0B0 /* Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombie.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2185,6 +2188,8 @@
 				BA5827BD18F01294007CD67C /* MainScene.cpp */,
 				BA8F540918FD0C4C00918396 /* Plant.h */,
 				BA8F540818FD0C4C00918396 /* Plant.cpp */,
+				BAF87E3D18FE4F9600A8C0B0 /* Zombie.cpp */,
+				BAF87E3E18FE4F9600A8C0B0 /* Zombie.h */,
 				BA6D5CBF18F0208400556327 /* GameScene.h */,
 				BA6D5CBE18F0208400556327 /* GameScene.cpp */,
 			);
@@ -2318,6 +2323,7 @@
 				BA58279418F0079E007CD67C /* cpShape.c in Sources */,
 				BA5826DF18F0079D007CD67C /* CCEditBoxImplTizen.cpp in Sources */,
 				BA5827A218F0079E007CD67C /* cpSweep1D.c in Sources */,
+				BAF87E3F18FE4F9600A8C0B0 /* Zombie.cpp in Sources */,
 				BA58267618F0079C007CD67C /* CCLayerColorLoader.cpp in Sources */,
 				BA58250818F0079A007CD67C /* CCTransition.cpp in Sources */,
 				BA58251218F0079A007CD67C /* CCMenu.cpp in Sources */,
