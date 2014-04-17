@@ -11,12 +11,18 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#define ZOMBIE_DIE "zombie_die"
 using namespace cocos2d;
 class Zombie:public CCNode {
 private:
+    int HP;
     CCSprite *m_sprite;
     void onEnter();
+    void move(float t);
+    void die();
+    
 public:
+    void reducehp();
     virtual bool init();
     CREATE_FUNC(Zombie);
    

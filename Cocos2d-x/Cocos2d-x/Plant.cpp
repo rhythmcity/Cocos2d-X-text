@@ -7,6 +7,7 @@
 //
 
 #include "Plant.h"
+#include "MainScene.h"
 bool Plant:: init(){
 
     if (!CCNode::init()) {
@@ -42,6 +43,8 @@ void Plant::fire()
     this->getParent()->addChild(pb);
     CCMoveBy *by=CCMoveBy ::create(3, ccp(960, 0));
     pb->runAction(by);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(FIRE_PB, pb);
+   
 }
 void Plant:: onFire(float t){
     this->fire();

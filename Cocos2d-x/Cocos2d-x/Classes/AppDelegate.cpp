@@ -30,7 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
-
+    CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionNoBorder);
     // turn on display FPS
     pDirector->setDisplayStats(true);
 
